@@ -1,17 +1,14 @@
 'use client'
 
 import { useState } from 'react'
-import { supabase } from '@/lib/supabase'
 
 export default function Home() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
-    if (error) alert('ログイン失敗: ' + error.message)
-    else alert('ログイン成功！')
+    alert('ログイン処理を実行します')
   }
 
   return (
